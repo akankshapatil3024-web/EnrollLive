@@ -1,0 +1,235 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Ensure table overflow containers have smooth scrolling and compact scrollbars */
+.table-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-scrollbar::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.table-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.table-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.table-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+/* ==========================================================================
+   🌙 DARK THEME TOKENS & SURFACE ELEVATION
+   ========================================================================== */
+
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body,
+html.dark #enroll-live-app {
+  background-color: #0b0f19;
+  color: #f1f5f9;
+}
+
+/* Header, Navbar, Footers and Pipeline Bar */
+html.dark header#app-header,
+html.dark footer#app-footer,
+html.dark #workflow-pipeline-bar {
+  background-color: #101726;
+  border-color: #243044;
+}
+
+/* Surface backgrounds */
+html.dark .bg-white {
+  background-color: #131b2e;
+  color: #f1f5f9;
+}
+
+html.dark .bg-slate-50 {
+  background-color: #0b0f19;
+}
+
+html.dark .bg-slate-100 {
+  background-color: #1e293b;
+  color: #e2e8f0;
+}
+
+html.dark .bg-slate-200 {
+  background-color: #334155;
+}
+
+/* Borders & Dividers */
+html.dark .border-slate-200,
+html.dark .border-slate-100 {
+  border-color: #243044;
+}
+
+html.dark .border-slate-300 {
+  border-color: #334155;
+}
+
+html.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]),
+html.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #243044;
+}
+
+/* High contrast dark text mappings */
+html.dark .text-slate-900 {
+  color: #f8fafc;
+}
+
+html.dark .text-slate-800 {
+  color: #f1f5f9;
+}
+
+html.dark .text-slate-700 {
+  color: #e2e8f0;
+}
+
+html.dark .text-slate-600 {
+  color: #cbd5e1;
+}
+
+html.dark .text-slate-500 {
+  color: #94a3b8;
+}
+
+html.dark .text-slate-400 {
+  color: #64748b;
+}
+
+/* Interactive States */
+html.dark .hover\:bg-slate-50:hover {
+  background-color: #1a243b !important;
+}
+
+html.dark .hover\:bg-slate-100:hover {
+  background-color: #243044 !important;
+}
+
+html.dark .hover\:text-slate-900:hover {
+  color: #ffffff !important;
+}
+
+/* Form Controls */
+html.dark input,
+html.dark select,
+html.dark textarea {
+  background-color: #131b2e;
+  color: #f8fafc;
+  border-color: #243044;
+}
+
+html.dark input:focus,
+html.dark select:focus,
+html.dark textarea:focus {
+  border-color: #38bdf8;
+  outline: none;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #64748b;
+}
+
+html.dark select option {
+  background-color: #131b2e;
+  color: #f8fafc;
+}
+
+/* Soft shadows in dark mode */
+html.dark .shadow-2xs,
+html.dark .shadow-xs,
+html.dark .shadow-sm,
+html.dark .shadow-md,
+html.dark .shadow-lg,
+html.dark .shadow-xl {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+}
+
+/* Badges & Clinical Indicators in Dark Mode */
+html.dark .bg-sky-50 {
+  background-color: rgba(14, 165, 233, 0.15);
+}
+html.dark .text-sky-700,
+html.dark .text-sky-600 {
+  color: #38bdf8;
+}
+html.dark .border-sky-200 {
+  border-color: rgba(14, 165, 233, 0.35);
+}
+
+html.dark .bg-amber-50 {
+  background-color: rgba(245, 158, 11, 0.15);
+}
+html.dark .text-amber-800,
+html.dark .text-amber-700 {
+  color: #fbbf24;
+}
+html.dark .border-amber-200 {
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+html.dark .bg-rose-50 {
+  background-color: rgba(244, 63, 94, 0.15);
+}
+html.dark .text-rose-700,
+html.dark .text-rose-600 {
+  color: #fb7185;
+}
+html.dark .border-rose-200 {
+  border-color: rgba(244, 63, 94, 0.35);
+}
+
+html.dark .bg-emerald-50 {
+  background-color: rgba(16, 185, 129, 0.15);
+}
+html.dark .text-emerald-700,
+html.dark .text-emerald-600 {
+  color: #34d399;
+}
+html.dark .border-emerald-200 {
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+html.dark .bg-purple-50,
+html.dark .bg-indigo-50 {
+  background-color: rgba(99, 102, 241, 0.15);
+}
+html.dark .text-indigo-700,
+html.dark .text-purple-700 {
+  color: #818cf8;
+}
+html.dark .border-indigo-200 {
+  border-color: rgba(99, 102, 241, 0.35);
+}
+
+/* Scrollbars in Dark Mode */
+html.dark .table-scrollbar {
+  scrollbar-color: #334155 transparent;
+}
+html.dark .table-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #334155;
+}
+html.dark .table-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #475569;
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0",
+  "entities": {
+    "User": {
+      "collection": "users",
+      "fields": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "role": { "type": "string" },
+        "department": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "Patient": {
+      "collection": "patients",
+      "fields": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "age": { "type": "number" },
+        "gender": { "type": "string" },
+        "medicalCondition": { "type": "string" },
+        "admissionType": { "type": "string" },
+        "riskScore": { "type": "number" },
+        "riskLevel": { "type": "string" },
+        "flaggedBy": { "type": "string" },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "Intervention": {
+      "collection": "interventions",
+      "fields": {
+        "id": { "type": "string" },
+        "patientId": { "type": "string" },
+        "patientName": { "type": "string" },
+        "clinicianId": { "type": "string" },
+        "clinicianName": { "type": "string" },
+        "clinicianRole": { "type": "string" },
+        "actionType": { "type": "string" },
+        "planDetails": { "type": "string" },
+        "priority": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "AuditLog": {
+      "collection": "auditLogs",
+      "fields": {
+        "id": { "type": "string" },
+        "action": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "patientId": { "type": "string" },
+        "details": { "type": "string" },
+        "timestamp": { "type": "string" }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "EnrollLive",
+  "description": "Predictive Hospital Readmission Risk Screening Prototype for Chronic Disease Patients",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

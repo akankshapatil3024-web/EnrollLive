@@ -104,12 +104,17 @@ The AI receives only the relevant selected-patient information rather than the c
 
 ## 🛠️ Technology Stack
 
-- React
-- JavaScript / TypeScript
-- CSV
-- Google Gemini API
-- Git & GitHub
-- VS Code
+- **React + TypeScript** → Build a fast, interactive healthcare dashboard.
+- **Tailwind CSS** → Create a clean, responsive user interface.
+- **Vite** → Fast development and easy project setup.
+- **Papa Parse** → Efficiently read and process large CSV files.
+- **IndexedDB + Dexie.js** → Store and manage thousands of patient records locally.
+- **Recharts** → Create interactive risk and patient analytics charts.
+- **Gemini API** → Generate understandable, patient-specific AI explanations.
+- **Google AI Studio** → Rapidly develop and test the AI-powered prototype.
+- **Git & GitHub** → Version control and collaboration.
+- **Healthcare CSV** → Provides the primary patient data for screening and analysis.
+
 
 ---
 

@@ -1,69 +1,49 @@
 # 🏥 EnrollLive
 
-## AI-Powered Hospital Readmission Risk Screening
+**AI-Assisted Healthcare Patient Risk Screening & Analytics Platform**
 
-EnrollLive is an AI-powered healthcare decision-support prototype designed to help healthcare professionals identify patients who may require closer review after hospital discharge.
+EnrollLive is a healthcare analytics prototype designed to help identify patient risk, understand contributing factors, and generate AI-assisted explanations for selected patients.
 
-It analyzes healthcare patient data and provides risk screening, contributing factors, explainable AI insights, early-warning identification, What-If simulation, multilingual explanations, and patient risk reports.
+---
+
+## 📌 Overview
+
+EnrollLive processes healthcare patient data and provides:
+
+- Patient search and filtering
+- Risk screening
+- Contributing-factor analysis
+- AI-generated explanations
+- What-If simulation
+- Early warning insights
+- Patient risk reports
+- Healthcare analytics
 
 ---
 
 ## 🎯 Problem Statement
 
-Patients with chronic diseases may require repeated hospital visits after discharge. Hospitals often have large amounts of patient information but may not have an effective mechanism to identify patients who may require additional monitoring.
-
-ReadmitAI aims to make patient information easier to analyze and provide data-driven decision support.
+Healthcare professionals may need to analyze large amounts of patient information to identify patients who may require attention. Understanding risk factors quickly can support better monitoring and early intervention.
 
 ---
 
-## 💡 Our Solution
+## 💡 Proposed Solution
 
-EnrollLive provides a centralized platform where healthcare professionals can:
+EnrollLive provides a centralized platform that processes patient data and presents risk-related insights through an easy-to-use interface.
 
-- Search and analyze patient records
-- Identify high-risk patients
-- Understand contributing risk factors
-- Get AI-powered explanations
-- Simulate What-If scenarios
-- View early-warning patients
-- Generate patient risk reports
-- Get explanations in English, Hindi, and Marathi
+**Key idea:**
+
+`Patient Data → Risk Screening → Explanation → Early Warning → Report`
 
 ---
 
-## 🚀 Key Features
+## 📊 Dataset
 
-### 🧠 Explainable AI — "Why This Patient?"
-Provides an AI-generated explanation of the major factors contributing to a patient's risk-screening score.
-
-### 🔮 What-If Risk Simulator
-Allows users to change supported patient factors and compare the current score with a simulated score.
-
-### 🚨 Early Warning Center
-Highlights patients with higher screening risk for priority review.
-
-### 🌐 Multilingual AI
-Provides explanations in:
-- English
-- Hindi
-- Marathi
-
-### 📄 Patient Risk Report
-Generates a structured report containing patient information, screening score, contributing factors, AI explanation, and general monitoring suggestions.
-
-### 📊 Healthcare Analytics
-Provides visualizations for:
-- Risk distribution
-- Medical conditions
-- Admission types
-- Test results
-- Age distribution
-
-### 🔍 Patient Search & Filtering
-Search and filter patients using available healthcare attributes.
-
-### 📁 Large Dataset Support
-Designed to handle approximately **55,502 patient records** using efficient data processing, search, filtering, and pagination.
+- Approximately **55,502 patient records**
+- Dataset is imported through CSV
+- Complete dataset is handled by the application's data layer
+- The complete dataset is **not sent to Gemini**
+- Only relevant information from the **selected patient** is sent for AI explanation
 
 ---
 
@@ -71,98 +51,100 @@ Designed to handle approximately **55,502 patient records** using efficient data
 
 ```text
 Healthcare Dataset
-        ↓
-CSV Import
-        ↓
-Data Processing
-        ↓
-Patient Database
-        ↓
-Search / Filter
-        ↓
-Risk Screening
-        ↓
-Contributing Factors
-        ↓
-Gemini AI Explanation
-        ↓
-What-If Simulation
-        ↓
-Early Warning
-        ↓
-Patient Risk Report
+       ↓
+    CSV Import
+       ↓
+ Data Processing
+       ↓
+ Patient Data Layer
+       ↓
+ Search / Filter
+       ↓
+ Selected Patient
+       ↓
+  Risk Screening
+       ↓
+ Contributing Factors
+       ↓
+ Gemini AI Explanation
+       ↓
+ What-If Simulation
+       ↓
+   Early Warning
+       ↓
+ Patient Risk Report
+```
 
-📊 Dataset
-The application is designed to work with the specified healthcare dataset containing approximately 55,502 patient records.
-The complete dataset is handled by the application's data layer.
-The complete dataset is not sent to Gemini.
-55,502 Records
-      ↓
-Application Data Layer
-      ↓
-Search / Filter
-      ↓
-Selected Patient
-      ↓
-Gemini AI
+---
 
-🤖 AI Integration
-Gemini is used primarily for patient-level explanations.
-Patient Data
-     ↓
-Risk Screening
-     ↓
-Contributing Factors
-     ↓
-Gemini AI
-     ↓
-Simple AI Explanation
-Only relevant selected-patient information is sent for an explanation rather than the entire dataset.
+## 🖥️ Application Modules
 
-📈 Model Evaluation
-If the supplied dataset contains a genuine readmission target, the system can evaluate a classification model using:
-Accuracy
-Precision
-Recall
-F1 Score
-Confusion Matrix
-ROC-AUC
-If a genuine readmission target is not available, the application does not fabricate model metrics and presents the system as a:
-Readmission Risk Screening Prototype
+| Module | Function |
+|---|---|
+| 📊 Dashboard | Patient statistics and risk distribution |
+| 👥 Patients | Search, filter, and patient profiles |
+| ⚠️ Risk Screening | Identify patient risk levels |
+| 🔍 Contributing Factors | Understand factors affecting risk |
+| 🤖 AI Explanation | Gemini-based patient-level explanation |
+| 🔄 What-If Simulation | Explore changes in risk factors |
+| 🚨 Early Warning | Highlight patients requiring attention |
+| 📄 Patient Report | Generate patient risk summary |
+| 📈 Analytics | Healthcare data insights |
+| 🧪 Model Evaluation | Evaluate prediction performance when valid labels are available |
 
-🖥️ Application Modules
-Dashboard
-│
-├── Patient Statistics
-├── Risk Distribution
-├── Healthcare Analytics
-│
-├── Patients
-│   ├── Search
-│   ├── Filter
-│   └── Patient Profile
-│
-├── Early Warning
-│
-├── Analytics
-│
-├── Model Evaluation
-│
-└── Patient Report
+---
 
-🔐 Security & Privacy
-Do not commit API keys to GitHub.
-Use environment variables for sensitive credentials.
-Use anonymized or synthetic patient data for demonstrations whenever possible.
-Avoid exposing personally identifiable healthcare information.
+## 🤖 AI Integration
 
-🔮 Future Scope
-Hospital information system integration
-Real-time patient monitoring
-Clinically validated prediction models
-Longitudinal patient history
-Role-based authentication
-Secure audit logs
-Mobile application
-Additional Indian regional languages
-Real-time hospital alerts
+EnrollLive uses **Google Gemini** to provide understandable explanations for selected patient risk.
+
+The AI receives only the relevant selected-patient information rather than the complete dataset.
+
+---
+
+## 🛠️ Technology Stack
+
+- React
+- JavaScript / TypeScript
+- CSV
+- Google Gemini API
+- Git & GitHub
+- VS Code
+
+---
+
+## 🔐 Security & Privacy
+
+- Never commit API keys to GitHub
+- Use environment variables for sensitive credentials
+- Use anonymized/synthetic data for demonstrations
+- Avoid exposing personally identifiable healthcare information
+- Send only minimum required patient information to AI
+
+---
+
+## 🚀 Future Scope
+
+- Real-time patient monitoring
+- Hospital system integration
+- Clinically validated prediction models
+- Role-based authentication
+- Secure audit logs
+- Mobile application
+- Regional language support
+- Real-time hospital alerts
+
+---
+
+## ⚠️ Disclaimer
+
+EnrollLive is a **prototype for educational and research purposes**. It is not a replacement for doctors, clinical diagnosis, medical advice, or hospital decision-making protocols.
+
+---
+
+## 📌 Project Status
+
+**Status:** Prototype / Development
+
+**Project:** EnrollLive  
+**Focus:** AI-Assisted Healthcare Risk Screening & Analytics
